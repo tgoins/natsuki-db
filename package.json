@@ -1,0 +1,19 @@
+{
+  "name": "natsuki-db",
+  "version": "1.0.0",
+  "description": "Database module for Natsuki Discord bot.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tannerz28/natsuki-db.git"
+  },
+  "author": "Tanner Goins",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/tannerz28/natsuki-db/issues"
+  },
+  "homepage": "https://github.com/tannerz28/natsuki-db#readme"
+}
