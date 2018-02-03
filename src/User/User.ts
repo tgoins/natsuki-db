@@ -48,6 +48,9 @@ export class User {
   @SchemaField(Array)
   favorites: []
 
+  @Column()
+  lastMessage: Date
+
   @OneToOne(type => UserBalance, userBalance => userBalance.user, {
     cascadeAll: true
   })
