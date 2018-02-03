@@ -27,14 +27,15 @@ import { connect, Connection } from 'natsuki-db'
 
 At the basic level, we need to connect to the database, so we import the `connect` method. The connect method returns a Promise of type `Connection` so we can import that also.
 
-The `connect` method expects an object with a few connection options: username, password, database, and port.
+The `connect` method expects an object with a few connection options: host, username, password, database, and port.
 
 ```javascript
 // Preferably, you should store these externally, like in a json file. This is just for example.
 const options = {
+  host: 'localhost'
   username: 'postgres',
   password: '',
-  database: 'localhost',
+  database: 'postgres',
   port: 5432
 }
 
