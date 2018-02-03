@@ -11,7 +11,9 @@
     "experimentalDecorators": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
-    "strict": true
+    "strict": true,
+    "declaration": true,
+    "outDir": "./dist"
   },
   "compileOnSave": true,
   "exclude": [

@@ -2,8 +2,10 @@
   "name": "natsuki-db",
   "version": "1.0.0-alpha.0",
   "description": "TypeScript PostgreSQL database module ready to be thrown into your Discord bot.",
-  "main": "index.ts",
+  "main": "dist/index.ts",
+  "types": "dist/index.d.ts",
   "scripts": {
+    "build": "tsc",
     "test": "mocha -r ts-node/register src/**/*.spec.ts"
   },
   "repository": {
