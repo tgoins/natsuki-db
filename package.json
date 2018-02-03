@@ -1,6 +1,6 @@
 {
   "name": "natsuki-db",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Database module for Natsuki Discord bot.",
   "main": "index.ts",
   "scripts": {
