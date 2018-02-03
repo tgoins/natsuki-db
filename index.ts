@@ -1,6 +1,6 @@
 import { createConnection } from 'typeorm'
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions'
-import { User, UserBalance, UserBan, UserKick, UserLevel, UserProfile, UserWarning, UserGuild, UserReputation } from './schema'
+import { User, UserBalance, UserBan, UserKick, UserLevel, UserProfile, UserWarning, UserGuild, UserReputation } from './src'
 export * from 'typeorm/connection/Connection'
 
 interface ConnectionOptions {

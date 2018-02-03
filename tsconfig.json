@@ -2,8 +2,6 @@
   "compilerOptions": {
     "target": "es2017",
     "module": "commonjs",
-    "outDir": "dist",
-    "rootDir": "src",
     "alwaysStrict": true,
     "charset": "utf-8",
     "moduleResolution": "node",

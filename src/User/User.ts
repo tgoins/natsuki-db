@@ -11,9 +11,6 @@ export class User {
   name: string
 
   @Column()
-  servers: []
-
-  @Column()
   levelsEnabled: boolean
 
   @Column()
@@ -31,7 +28,7 @@ export class User {
   @Column()
   verified: boolean
 
-  @@Column()
+  @Column()
   verificationToken: string
 
   @Column()

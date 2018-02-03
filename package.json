@@ -2,7 +2,7 @@
   "name": "natsuki-db",
   "version": "1.0.0",
   "description": "Database module for Natsuki Discord bot.",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "mocha -r ts-node/register src/**/*.spec.ts"
   },
