@@ -1,5 +1,5 @@
 import { Entity, PrimaryColumn, Column, OneToMany, OneToOne } from 'typeorm'
-import { UserWarning, UserBalance, UserProfile, UserLevel, UserKick, UserBan } from './'
+import { UserWarning, UserBalance, UserProfile, UserLevel, UserKick, UserBan, UserGuild, UserReputation } from './'
 
 @Entity('User')
 export class User {
@@ -10,7 +10,7 @@ export class User {
   @Column()
   name: string
 
-  @SchemaField(Array)
+  @Column()
   servers: []
 
   @Column()
@@ -34,15 +34,6 @@ export class User {
   @@Column()
   verificationToken: string
 
-  @SchemaField(Array)
-  cookies: []
-
-  @SchemaField(Array)
-  reputation: []
-
-  @SchemaField(Array)
-  favorites: []
-
   @Column()
   lastMessage: Date
 
@@ -60,6 +51,12 @@ export class User {
     cascadeAll: true
   })
   level: UserLevel
+
+  @OneToMany(type => UserReputation, userReputation => userReputation.user)
+  reputation: UserReputation[]
+
+  @OneToMany(type => UserGuild, userGuild => userGuild.user)
+  guilds: UserGuild[]
 
   @OneToMany(type => UserWarning, userWarning => userWarning.user)
   warnings: UserWarning[]

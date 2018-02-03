@@ -1,6 +1,7 @@
 import { createConnection } from 'typeorm'
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions'
-import { User, UserBalance, UserBan, UserKick, UserLevel, UserProfile, UserWarning } from './src/User'
+import { User, UserBalance, UserBan, UserKick, UserLevel, UserProfile, UserWarning, UserGuild, UserReputation } from './src/User'
+export * from 'typeorm/connection/Connection'
 
 interface ConnectionOptions {
   host: string
@@ -26,9 +27,11 @@ export const connect = (options: ConnectionOptions) => {
       User,
       UserBalance,
       UserBan,
+      UserGuild,
       UserKick,
       UserLevel,
       UserProfile,
+      UserReputation,
       UserWarning
     ]
   }
