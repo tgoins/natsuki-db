@@ -17,11 +17,15 @@
   },
   "homepage": "https://github.com/tannerz28/natsuki-db#readme",
   "dependencies": {
+    "@decorators/di": "^1.0.1",
+    "@decorators/mongoose": "^3.0.1",
     "bluebird": "^3.5.1",
     "discord.js": "github:hydrabolt/discord.js",
     "discord.js-commando": "github:Gawdl3y/discord.js-commando",
     "migrate-mongoose": "^3.2.2",
     "mongoose": "^5.0.1",
+    "pg": "^7.4.1",
+    "typeorm": "^0.1.12",
     "winston": "^2.4.0",
     "winston-daily-rotate-file": "^1.7.2"
   },

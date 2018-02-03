@@ -1,65 +1,76 @@
-import { Document } from 'mongoose'
+import { Entity, PrimaryColumn, Column, OneToMany, OneToOne } from 'typeorm'
+import { UserWarning } from './UserWarning'
+import { UserKick } from './UserKick'
+import { UserBan } from './UserBan'
+import { UserBalance } from './UserBalance'
+import { UserProfile } from './UserProfile'
+import { UserLevel } from './UserLevel'
 
-export interface User extends Document {
-  id: string,
-  name: string,
-  level: UserLevel,
-  money: UserBalance,
-  profile: UserProfile,
-  servers: [],
-  levelsEnabled: boolean,
-  pmNotifications: boolean,
-  avatar: string,
-  created: Date,
-  banned: boolean,
-  verified: boolean,
-  verificationToken: string,
-  cookies: [],
-  reputation: [],
-  favorites: [],
-  warnings: UserWarning[],
-  kicks: UserKick[],
-  bans: UserBan[],
-  createdAt: Date,
+@Entity('User')
+export class User {
+
+  @PrimaryColumn()
+  id: string
+
+  @Column()
+  name: string
+
+  @SchemaField(Array)
+  servers: []
+
+  @Column()
+  levelsEnabled: boolean
+
+  @Column()
+  pmNotifications: boolean
+
+  @Column()
+  avatar: string
+
+  @Column()
+  created: Date
+
+  @Column()
+  banned: boolean
+
+  @Column()
+  verified: boolean
+
+  @@Column()
+  verificationToken: string
+
+  @SchemaField(Array)
+  cookies: []
+
+  @SchemaField(Array)
+  reputation: []
+
+  @SchemaField(Array)
+  favorites: []
+
   modifiedAt: Date
-}
 
-export interface UserKick {
-  serverId: string,
-  serverName: string,
-  reason: string,
-  dateKicked: Date
-}
+  @OneToOne(type => UserBalance, userBalance => userBalance.user, {
+    cascadeAll: true
+  })
+  balance: UserBalance
 
-export interface UserWarning {
-  serverId: string,
-  serverName: string,
-  reason: string,
-  dateWarned: Date
-}
+  @OneToOne(type => UserProfile, userProfile => userProfile.user, {
+    cascadeAll: true
+  })
+  profile: UserProfile
 
-export interface UserBan {
-  serverId: string,
-  serverName: string,
-  reason: string,
-  dateBanned: Date
-}
+  @OneToOne(type => UserLevel, userLevel => userLevel.user, {
+    cascadeAll: true
+  })
+  level: UserLevel
 
-export interface UserLevel {
-  currentLevel: number
-  currentExperience: number
-  experienceNext: number
-  totalExperience: number
-}
+  @OneToMany(type => UserWarning, userWarning => userWarning.user)
+  warnings: UserWarning[]
 
-export interface UserBalance {
-  balance: number,
-  netWorth: number,
-  dateLastClaimed: Date
-}
+  @OneToMany(type => UserKick, userKick => userKick.user)
+  kicks: UserKick[]
 
-export interface UserProfile {
-  title: string,
-  bio: string,
-  background: string
+  @OneToMany(type => UserBan, userBan => userBan.user)
+  bans: UserBan[]
 }
