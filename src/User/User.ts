@@ -48,8 +48,6 @@ export class User {
   @SchemaField(Array)
   favorites: []
 
-  modifiedAt: Date
-
   @OneToOne(type => UserBalance, userBalance => userBalance.user, {
     cascadeAll: true
   })
