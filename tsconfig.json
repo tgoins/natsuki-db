@@ -4,19 +4,15 @@
     "module": "commonjs",
     "alwaysStrict": true,
     "charset": "utf-8",
-    "moduleResolution": "node",
     "noImplicitReturns": true,
-    "sourceMap": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "noImplicitAny": true,
     "strictNullChecks": true,
     "strict": true,
     "declaration": true,
-    "outDir": "./dist"
+    "outDir": "./dist",
+    "rootDir": "./src"
   },
-  "compileOnSave": true,
-  "exclude": [
-    "node_modules"
-  ]
+  "compileOnSave": true
 }
