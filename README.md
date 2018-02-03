@@ -11,7 +11,7 @@ Feel free to suggest new entities/columns, or even create a Pull Request to add 
 ## Prerequisites
  - Node.js > 7.0.0, Recommended > 8.0.0.
  - PostgreSQL > 9.0.
- - A discord bot running on Discord.js.
+ - A Discord bot running on Discord.js.
  - (optional [for now]) Redis. Will be used in a future update.
 
 ## Installation
