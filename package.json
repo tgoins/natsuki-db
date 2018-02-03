@@ -19,26 +19,18 @@
   },
   "homepage": "https://github.com/tannerz28/natsuki-db#readme",
   "dependencies": {
-    "bluebird": "^3.5.1",
-    "discord.js": "github:hydrabolt/discord.js",
-    "discord.js-commando": "github:Gawdl3y/discord.js-commando",
     "pg": "^7.4.1",
-    "typeorm": "^0.1.12",
-    "winston": "^2.4.0",
-    "winston-daily-rotate-file": "^1.7.2"
+    "typeorm": "^0.1.12"
   },
   "devDependencies": {
-    "@types/bluebird": "^3.5.20",
     "@types/chai": "^4.1.2",
     "@types/mocha": "^2.2.47",
     "@types/node": "^8.0.57",
-    "@types/winston": "^2.3.7",
     "chai": "^4.1.2",
     "esdoc": "^1.0.3",
     "esdoc-standard-plugin": "^1.0.0",
     "eslint": "^4.2.0",
     "karma": "^1.7.0",
-    "karma-coverage": "^1.1.1",
     "mocha": "^5.0.0",
     "standard": "^10.0.3",
     "ts-node": "^4.1.0",
