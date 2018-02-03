@@ -1,5 +1,5 @@
 import { Entity, Column, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
-import { User } from './User'
+import { User } from './'
 
 @Entity()
 export class UserKick {

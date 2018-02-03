@@ -1,5 +1,5 @@
 import { Entity, Column, OneToOne, JoinColumn, PrimaryGeneratedColumn } from 'typeorm'
-import { User } from './User'
+import { User } from './'
 
 @Entity()
 export class UserLevel {

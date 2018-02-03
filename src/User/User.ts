@@ -1,10 +1,5 @@
 import { Entity, PrimaryColumn, Column, OneToMany, OneToOne } from 'typeorm'
-import { UserWarning } from './UserWarning'
-import { UserKick } from './UserKick'
-import { UserBan } from './UserBan'
-import { UserBalance } from './UserBalance'
-import { UserProfile } from './UserProfile'
-import { UserLevel } from './UserLevel'
+import { UserWarning, UserBalance, UserProfile, UserLevel, UserKick, UserBan } from './'
 
 @Entity('User')
 export class User {
