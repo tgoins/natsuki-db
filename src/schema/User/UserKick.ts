@@ -1,5 +1,5 @@
 import { Entity, Column, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
-import { User } from './'
+import { User, UserInfraction } from './'
 
 @Entity()
 export class UserKick {
@@ -7,14 +7,8 @@ export class UserKick {
   @PrimaryGeneratedColumn()
   id: number
 
-  @Column()
-  serverId: string
-
-  @Column()
-  serverName: string
-
-  @Column()
-  reason: string
+  @Column(type => UserInfraction)
+  infraction: UserInfraction
 
   @Column()
   dateKicked: Date
