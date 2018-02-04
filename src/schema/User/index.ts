@@ -1,7 +1,6 @@
 export * from './User'
 export * from './UserBalance'
 export * from './UserBan'
-export * from './UserGuild'
 export * from './UserInfraction'
 export * from './UserKick'
 export * from './UserLevel'

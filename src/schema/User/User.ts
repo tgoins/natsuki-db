@@ -1,5 +1,6 @@
 import { Entity, PrimaryColumn, Column, OneToMany, OneToOne } from 'typeorm'
-import { UserWarning, UserBalance, UserProfile, UserLevel, UserKick, UserBan, UserGuild, UserReputation } from './'
+import { UserWarning, UserBalance, UserProfile, UserLevel, UserKick, UserBan, UserReputation } from './'
+import { GuildUser, GuildBlacklistedUser } from '../../index'
 
 @Entity('User')
 export class User {
@@ -52,15 +53,27 @@ export class User {
   @OneToMany(type => UserReputation, userReputation => userReputation.user)
   reputation: UserReputation[]
 
-  @OneToMany(type => UserGuild, userGuild => userGuild.user)
-  guilds: UserGuild[]
+  @OneToMany(type => GuildUser, guildUser => guildUser.user)
+  guilds: GuildUser[]
 
   @OneToMany(type => UserWarning, userWarning => userWarning.user)
-  warnings: UserWarning[]
+  warningsReceived: UserWarning[]
 
   @OneToMany(type => UserKick, userKick => userKick.user)
-  kicks: UserKick[]
+  kicksReceived: UserKick[]
 
   @OneToMany(type => UserBan, userBan => userBan.user)
-  bans: UserBan[]
+  bansReceived: UserBan[]
+
+  @OneToMany(type => UserWarning, userWarning => userWarning.user)
+  warningsGiven: UserWarning[]
+
+  @OneToMany(type => UserKick, userKick => userKick.user)
+  kicksGiven: UserKick[]
+
+  @OneToMany(type => UserBan, userBan => userBan.user)
+  bansGiven: UserBan[]
+
+  @OneToMany(type => GuildBlacklistedUser, guildBlacklistedUser => guildBlacklistedUser.blacklistedByUser)
+  blacklistsGiven: GuildBlacklistedUser[]
 }

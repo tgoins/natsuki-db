@@ -1,6 +1,20 @@
-import { createConnection, Connection } from 'typeorm'
+import { createConnection, Connection, getRepository } from 'typeorm'
 import { PostgresConnectionOptions } from 'typeorm/driver/postgres/PostgresConnectionOptions'
-import { User, UserBalance, UserBan, UserKick, UserLevel, UserProfile, UserWarning, UserGuild, UserReputation } from './schema'
+import {
+  User,
+  UserBalance,
+  UserBan,
+  UserKick,
+  UserLevel,
+  UserProfile,
+  UserWarning,
+  UserReputation,
+  Guild,
+  GuildTextChannelSettings,
+  GuildVoiceChannelSettings,
+  GuildUser,
+  GuildBlacklistedUser
+} from './schema'
 
 export interface ConnectionOptions {
   host: string
@@ -23,15 +37,22 @@ export const connect = (options: ConnectionOptions) => {
     database,
     type: 'postgres',
     entities: [
+      // User Entities
       User,
       UserBalance,
       UserBan,
-      UserGuild,
       UserKick,
       UserLevel,
       UserProfile,
       UserReputation,
-      UserWarning
+      UserWarning,
+
+      // Guild Entities
+      Guild,
+      GuildBlacklistedUser,
+      GuildTextChannelSettings,
+      GuildUser,
+      GuildVoiceChannelSettings
     ]
   }
 
@@ -39,4 +60,4 @@ export const connect = (options: ConnectionOptions) => {
 }
 
 export * from './schema'
-export * from 'typeorm/connection/Connection'
+export { Connection, getRepository }

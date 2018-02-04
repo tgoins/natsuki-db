@@ -1,5 +1,6 @@
 import { Entity, Column, ManyToOne, PrimaryGeneratedColumn } from 'typeorm'
 import { User, UserInfraction } from './'
+import { Guild } from '../'
 
 @Entity()
 export class UserWarning {
@@ -10,9 +11,12 @@ export class UserWarning {
   @Column(type => UserInfraction)
   infraction: UserInfraction
 
-  @Column()
-  dateWarned: Date
-
-  @ManyToOne(type => User, user => user.warnings)
+  @ManyToOne(type => User, user => user.warningsReceived)
   user: User
+
+  @ManyToOne(type => Guild, guild => guild.userWarnings)
+  guild: Guild
+
+  @ManyToOne(type => User, user => user.warningsGiven)
+  givenByUser: User
 }

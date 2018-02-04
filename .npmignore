@@ -1,3 +1,5 @@
 src/
 !dist/
 .git/
+*.json
+!package.json
