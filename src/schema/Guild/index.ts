@@ -1,6 +1,5 @@
 export * from './Guild'
 export * from './GuildBlacklistedUser'
-export * from './GuildModuleSettings'
 export * from './GuildTextChannelSettings'
 export * from './GuildUser'
 export * from './GuildVoiceChannelSettings'
