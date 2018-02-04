@@ -12,9 +12,7 @@
     "strict": true,
     "declaration": true,
     "outDir": "./dist",
-    "rootDir": "./src",
-    "noUnusedLocals": true,
-    "noUnusedParameters": true
+    "rootDir": "./src"
   },
   "compileOnSave": true
 }
