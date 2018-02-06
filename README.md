@@ -16,7 +16,7 @@ Feel free to suggest new entities/columns, or even create a Pull Request to add 
 
 ## Installation
 ```sh
-$  npm i -s tannerz28/natsuki-db
+$  npm i -s natsuki-db
 ```
 
 ## Usage
