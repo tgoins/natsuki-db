@@ -35,7 +35,15 @@ export class GuildBlacklistedUser {
   blacklistedByUser: GuildUser
 
   /**
-   * The Guild that the BlacklistedUser belongs to. Configured automatically.
+   * The blacklisted User
+   * @type {GuildUser}
+   * @memberof GuildBlacklistedUser
+   */
+  @ManyToOne(type => GuildUser)
+  user: GuildUser
+
+  /**
+   * The Guild that the blacklisted User belongs to. Configured automatically.
    * @type {Guild}
    * @memberof GuildBlacklistedUser
    */

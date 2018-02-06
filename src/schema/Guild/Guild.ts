@@ -42,9 +42,6 @@ export class Guild {
   @Column()
   nsfwChannels: string[]
 
-  @Column()
-  blacklist: GuildBlacklistedUser[]
-
   /**
    * Text channel settings for the Guild.
    * @type {GuildTextChannelSettings}
