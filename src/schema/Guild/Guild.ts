@@ -8,14 +8,13 @@ import { User, GuildUser, UserWarning, UserKick, UserBan } from '../../'
  * @class Guild
  */
 @Entity()
-
 export class Guild {
   /**
    * The Discord ID of the Guild.
    * @type {string}
    * @memberof Guild
    */
-  @PrimaryColumn()
+  @PrimaryColumn({ type: 'varchar', length: 100 })
   id: string
 
   /**

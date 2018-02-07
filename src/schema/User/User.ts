@@ -5,7 +5,7 @@ import { GuildUser, GuildBlacklistedUser } from '../../index'
 @Entity('User')
 export class User {
 
-  @PrimaryColumn()
+  @PrimaryColumn({ type: 'varchar', length: 100 })
   id: string
 
   @Column()
